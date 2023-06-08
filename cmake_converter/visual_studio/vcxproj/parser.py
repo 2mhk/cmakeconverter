@@ -284,7 +284,7 @@ class VCXParser(Parser):
     def __parse_condition(self, context, attr_name, condition_value, node):
         del attr_name
 
-        found = re.search(r".*=='(.*)'", condition_value)
+        found = re.search(r".*=='(.*\|.*)'", condition_value)
         if not found:
             return
 
